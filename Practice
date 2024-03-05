@@ -1,0 +1,298 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+	string v;
+	vector<Node*> child;
+	Node* parent;
+	int anc_locked, dec_locked, uid;
+	bool isLocked;
+	
+	Node(string x, Node *p){
+		v = x;
+		parent = p;
+		anc_locked = 0;
+		dec_locked = 0;
+		uid = 0;
+		isLocked = false;
+	}
+
+	void addchild(vector<string> l, Node *p){
+		for(auto &i : l)
+			child.push_back(new Node(i,p));
+	}
+};
+
+void printTree(Node *r){
+	cout << "Parent: " << r->v << "\n";
+	cout << "Child: \n";
+	for(auto k : r->child){
+		cout << k->v << " anc_locked: " << k->anc_locked 
+			<< " dec_locked:" << k->dec_locked << " isLocked:" 
+			<< k->isLocked << " uid:" << k->uid << "\n";
+	}
+	cout << "\n";
+	for(auto k : r->child){
+		printTree(k);
+	}
+}
+
+struct Node* buildTree(Node *root, int &m, vector<string> &s){
+	queue<Node*> q;
+	q.push(root);
+
+	int st = 1;
+	while(!q.empty()){
+		Node *r = q.front();
+		q.pop();
+
+		if(st >= s.size()) continue;
+
+		vector<string> temp;
+		for(int i = st; i < st + m; i++)
+			temp.push_back(s[i]);
+		r->addchild(temp,r);
+		st += m;
+
+		for(auto k: r->child)
+			q.push(k);
+	}
+
+	return root;
+}
+
+class Tree{
+	private:
+		Node *root;
+		unordered_map<string, Node*> vton;
+	public:
+
+		Tree(Node *r){ root = r;}
+
+		Node* getRoot() { return root; }
+
+		void fillVtoN(Node *r){
+			if(!r) return;
+			vton[r->v] = r;
+			for(auto k : r->child)
+				fillVtoN(k);
+		}
+
+        // update all descendant abiut a locked applied on their parent
+		void informDescendants(Node *r, int val){
+			for(auto k: r->child){
+				k->anc_locked += val;
+				informDescendants(k,val);
+			}
+			
+		}
+		
+		// check if all childs have any locked applied on it
+		// if no one has a lock > return true
+		// if anyone has a lock -> return false
+		bool verifyDescendants(Node *r, int &id, vector<Node*> &v){
+			if(r->isLocked){
+				if(r->uid != id) return false;
+				v.push_back(r);
+			}
+			if(r->dec_locked == 0) return true;
+
+			bool ans = true;
+			for(auto k: r->child){
+				ans &= verifyDescendants(k,id,v);
+				if(ans == false) return false;
+			}
+			return ans;
+		}
+		
+		
+		/*
+		World
+Asia
+Africa
+India
+China
+SouthAfrica
+Egypt
+1 Asia 9
+World{
+   anc_counter = 0
+    desc_counter = 1
+}
+Asia {
+    uid = 9
+    
+}
+India {
+    anc_counter = 1
+    desc_counter = 0
+}
+China {
+    anc_counter = 1
+    desc_counter = 0
+}
+2 Asia 9
+World{
+   anc_counter = 0
+    desc_counter = 0
+}
+Asia {
+    uid = 0
+    
+}
+India {
+    anc_counter = 0
+    desc_counter = 0
+}
+China {
+    anc_counter = 0
+    desc_counter = 0
+}
+		*/
+		 
+
+		bool lock(string v, int id){
+			Node *t = vton[v];
+			
+			// Verify if we can apply lock?
+			if(t->isLocked) return false;
+
+			if(t->anc_locked != 0) return false;
+			if(t->dec_locked != 0) return false;
+
+
+			//now actually apply lock
+			//Step 1: update descendent_lock of all parents
+			Node *cur = t->parent;
+			while(cur){
+				cur->dec_locked++;
+				cur = cur->parent;
+			}
+			//Step 2: updat all childs and set ancesctor-lock++
+			informDescendants(t,1);
+			//Step 3: Update the node and set it to be locked
+			t->isLocked = true;
+			t->uid = id;
+			return true;
+		}
+
+		bool unlock(string v, int id){
+			Node *t = vton[v];
+			// Verify if we can unlock the node?
+			if(!t->isLocked) return false;
+			if(t->isLocked && t->uid != id) return false;
+
+            //now actually apply lock
+			//Step 1: update descendent_lock of all parents
+			Node *cur = t->parent;
+			while(cur){
+				cur->dec_locked--;
+				cur = cur->parent;
+			}
+			//Step 2: updat all childs and set ancesctor-lock++
+			informDescendants(t,-1);
+			//Step 3: Update the node and set it to be unlocked
+			t->isLocked = false;
+			return true;
+		}
+
+		bool upgrade(string v, int id){
+			Node *t = vton[v];
+			
+			
+			if(t->isLocked) return false;
+
+			if(t->anc_locked != 0) return false;
+			if(t->dec_locked == 0) return false;
+
+
+			//Step 1: unlock all child nodes
+			vector<Node*> vec;
+			if(verifyDescendants(t,id,vec)){
+				for(auto k : vec){
+					unlock(k->v,id);
+				}
+			}else return false;
+			
+			//Step 2: locl on requested node
+			lock(v,id);
+			return true;
+		}
+};
+
+/*
+Example Input:
+7
+2
+4
+World
+Asia
+Africa
+India
+China
+SouthAfrica
+Egypt
+1 China 9
+1 India 9
+3 Asia 9
+2 India 9
+*/
+
+int main() {
+
+	/*
+	 * INPUT
+	 * n = total number of nodes
+	 * m = number of child per node
+	 * q = number of queries
+	 *
+	 * next 'n' lines = node name in string
+	 * next 'q' lines = queries with (opcode, string, uid)
+	 *
+	 * opcode => 1 = Lock, 2 = Unlock, 3 = Upgrade
+	*/
+
+
+	int n,m,q;
+	cin >> n;
+	cin >> m;
+	cin >> q;
+
+	vector<string> s(n);
+	for(int i = 0; i < n; i++)
+		cin >> s[i];
+	
+	Node *r = new Node(s[0],nullptr);
+	r = buildTree(r,m,s);
+// 	printTree(r);
+	
+	Tree t(r);
+	t.fillVtoN(t.getRoot());
+
+	int op,uid;
+	string sq;
+	for(int i = 0; i < q; i++){
+		cin >> op >> sq >> uid;
+		switch(op){
+			case 1:	if(t.lock(sq,uid)){
+						cout << "true\n";
+						//printTree(r);
+					}else
+						cout << "false\n";
+					break;
+			case 2:	if(t.unlock(sq,uid))
+						cout << "true\n";
+					else
+						cout << "false\n";
+					break;
+			case 3:	if(t.upgrade(sq,uid)){
+						cout << "true\n";
+						//printTree(r);
+					}else
+						cout << "false\n";
+					break;
+		}
+	}
+	return 0;
+}

@@ -24,8 +24,7 @@
     "multimodalTicketConfig": {
       "dynamicRefresh": false,
       "refreshTime": 30000
-    },
-    "enablePublicTransportPreferences": false
+    }
   },
   "bangalore": {
     "version": "1.0.0",
@@ -46,7 +45,6 @@
     "enableMultimodal": true,
     "showPublicTransportAboveEstimates": false,
     "enableDriverFavourite": true,
-    "enablePublicTransportPreferences" : true,
     "showSeparateNammaTransit": false,
     "estimateCardsPositionConfig": {
       "nammaTransitPosition": 4,

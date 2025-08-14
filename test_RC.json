@@ -47,8 +47,8 @@
     "enableDriverFavourite": true,
     "showSeparateNammaTransit": false,
     "estimateCardsPositionConfig": {
-      "nammaTransitPosition": 4,
-      "bookAnyPosition": 5
+      "nammaTransitPosition": 1,
+      "bookAnyPosition": 3
     },
     "multimodalTicketConfig": {
       "dynamicRefresh": true,

@@ -1,0 +1,12 @@
+{
+  "bangalore": [
+    "HOURLY_RENTALS",
+    "INTERCITY_RECOMMENDATIONS",
+    "EXPLORE"
+  ],
+  "amsterdam": [
+    "NAMMA_SERVICES",
+    "BANNERS",
+    "EXPLORE"
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "bangalore": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    },
+    {
+      "name": "DUTCH",
+      "translatedName": "Nederlands"
+    },
+    {
+      "name": "GERMAN",
+      "translatedName": "Deutsch"
+    }
+  ],
+  "amsterdam": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "DUTCH",
+      "translatedName": "Nederlands"
+    },
+    {
+      "name": "GERMAN",
+      "translatedName": "Deutsch"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    }
+  ],
+  "chennai": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    }
+  ],
+  "bhubaneswar": [
+    {
+      "name": "Odia",
+      "translatedName": "ଓଡ଼ିଆ"
+    },
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    }
+  ],
+  "cuttack": [
+    {
+      "name": "Odia",
+      "translatedName": "ଓଡ଼ିଆ"
+    },
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    }
+  ],
+  "puri": [
+    {
+      "name": "Odia",
+      "translatedName": "ଓଡ଼ିଆ"
+    },
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    }
+  ],
+  "kochi": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    }
+  ],
+  "alapuzha": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    }
+  ],
+  "idukki": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    }
+  ],
+  "kasarkode": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    }
+  ],
+  "wayanad": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    }
+  ],
+  "kannur": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    }
+  ],
+  "kottayam": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    }
+  ],
+  "palakkad": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    }
+  ],
+  "kolam": [
+    {
+      "name": "English",
+      "translatedName": "English"
+    },
+    {
+      "name": "Malayalam",
+      "translatedName": "മലയാളം"
+    },
+    {
+      "name": "Kannada",
+      "translatedName": "ಕನ್ನಡ"
+    },
+    {
+      "name": "Hindi",
+      "translatedName": "हिन्दी"
+    },
+    {
+      "name": "Tamil",
+      "translatedName": "தமிழ்"
+    },
+    {
+      "name": "Telugu",
+      "translatedName": "తెలుగు"
+    },
+    {
+      "name": "Bengali",
+      "translatedName": "বাংলা"
+    }
+  ]
+}
